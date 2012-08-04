@@ -4,7 +4,7 @@
 
 pkgname='scipoptsuite'
 pkgver='3.0.0'
-pkgrel=2
+pkgrel=3
 pkgdesc='The SCIP Optimization Suite is a tool for generating and solving mixed integer programs. Consists of ZIMPL, SoPlex, SCIP, GCG and UG'
 arch=('i686' 'x86_64')
 url='http://zibopt.zib.de/'
@@ -34,6 +34,9 @@ build() {
 
 	make gcg
 	make ug
+
+    # @TODO: shared lib with ZIMPL seems to be broken
+    make scipoptlib ZIMPL=false SHARED=true
 
 	# A local RPATH is set, get rid of it.
 	chrpath --delete ${_scip}/bin/scip
@@ -112,6 +115,7 @@ package_scipoptsuite() {
 	cp -d ${_scip}/lib/libscip* "${pkgdir}/usr/lib"
 	cp -d ${_soplex}/lib/* "${pkgdir}/usr/lib"
 	cp -d ${_zimpl}/lib/* "${pkgdir}/usr/lib"
+    cp -d lib/* "${pkgdir}/usr/lib"
 
 	# Repair "missing links"
 	# @FIXME: I hope this is not necessary in future versions!
