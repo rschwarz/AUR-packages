@@ -113,7 +113,7 @@ package_scipoptsuite() {
     cp -d ${_scip}/lib/libscip* "${pkgdir}/usr/lib"
     cp -d ${_soplex}/lib/* "${pkgdir}/usr/lib"
     cp -d ${_zimpl}/lib/* "${pkgdir}/usr/lib"
-    cp -d lib/* "${pkgdir}/usr/lib"
+    cp -d lib/libscipopt*.so "${pkgdir}/usr/lib/libscipopt.so"
 
     # Repair "missing links"
     # @FIXME: I hope this is not necessary in future versions!
