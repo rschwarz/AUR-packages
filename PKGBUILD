@@ -4,8 +4,8 @@
 
 pkgname='scipoptsuite'
 pkgver='3.0.0'
-pkgrel=3
-pkgdesc='The SCIP Optimization Suite is a tool for generating and solving mixed integer programs. Consists of ZIMPL, SoPlex, SCIP, GCG and UG'
+pkgrel=4
+pkgdesc="Tools for generating and solving optimization problems. Consists of ZIMPL, SoPlex, SCIP, GCG and UG"
 arch=('i686' 'x86_64')
 url='http://zibopt.zib.de/'
 license=('LGPL3' 'custom:ZIB Academic License')
@@ -35,12 +35,6 @@ build() {
 
     # @TODO: shared lib with ZIMPL seems to be broken
     make scipoptlib ZIMPL=false SHARED=true
-
-    # A local RPATH is set, get rid of it.
-    chrpath --delete ${_scip}/bin/scip
-    chrpath --delete ${_soplex}/bin/soplex
-    chrpath --delete ${_gcg}/bin/gcg
-    chrpath --delete ${_ug}/bin/fscip
 
     # @TODO: build docs in parallel?
 
