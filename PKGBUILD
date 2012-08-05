@@ -32,6 +32,8 @@ build() {
   # additional linker libraries (zlib, readline)
   patch -p1 < "$srcdir/03_libs.patch"
 
+  export C_INCLUDE_PATH=/usr/include/scip/:${C_INCLUDE_PATH}
+
   python2 setup.py build
 }
 
