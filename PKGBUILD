@@ -44,5 +44,5 @@ check() {
 
 package() {
   cd "$srcdir/$_pkgname-$_pkgver"
-  python setup.py install --root="$pkgdir/" --optimize=1
+  python2 setup.py install --root="$pkgdir/" --optimize=1
 }
