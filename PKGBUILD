@@ -15,7 +15,10 @@ source=("https://python-zibopt.googlecode.com/files/${_pkgname}-${_pkgver}.tar.g
         "01_scip30.patch"
         "02_warnings.patch"
         "03_libs.patch")
-md5sums=()
+md5sums=("3ba231e2cac7a072d03d5f730ddd536e"
+         "f9c194dfd5b4e027985f08dfdd181b6b"
+         "50578324a02a0e57941f8097b9cd1883"
+         "900bc60da30855a533db621c166b5571")
 
 build() {
   cd "$srcdir/$_pkgname-$_pkgver"
