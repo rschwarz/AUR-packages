@@ -4,7 +4,7 @@
 
 pkgname='scipoptsuite'
 pkgver='3.0.0'
-pkgrel=4
+pkgrel=5
 pkgdesc="Tools for generating and solving optimization problems. Consists of ZIMPL, SoPlex, SCIP, GCG and UG"
 arch=('i686' 'x86_64')
 url='http://zibopt.zib.de/'
@@ -15,7 +15,7 @@ makedepends=('chrpath' 'doxygen' 'graphviz')
 provides=('scip=3.0.0' 'soplex=1.7.0' 'zimpl=3.3.0' 'gcg=1.0.0' 'ug=0.7.0')
 source=("http://scip.zib.de/download/release/${pkgname}-${pkgver}.tgz"
         'soplex.dxy.patch')
-sha256sums=('006c2aa7369d55ed5cd8e2e5615052606674157cf70769a72d65d4f8b69f5dfd'
+sha256sums=('1ce8a351e92143e1d07d9aa5f9b0f259578f3cee82fcdd984e0024e0d4e3a548'
             '49519d42fccb91806a3e62292c0af102b5748958eea34f552a4e21221990cf89')
 
 build() {
