@@ -1,7 +1,7 @@
 # Maintainer: Robert Schwarz <mail@rschwarz.net>
 pkgname=geosteiner
 pkgver=3.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Compute Euclidean and Rectilinear Steiner Trees"
 arch=(i686 x86_64)
 url="http://www.diku.dk/hjemmesider/ansatte/martinz/geosteiner/"
@@ -22,15 +22,15 @@ package() {
   mkdir -p $pkgdir/usr/bin
   TARGETS=(bb dumpfst efst fst2graph kr lib_points plotfst prunefst rand_points rfst)
   for i in ${TARGETS[@]}; do
-      install -m 755 $i $pkgdir/usr/bin
+      install -c -m 755 $i $pkgdir/usr/bin
   done
 
   mkdir -p $pkgdir/usr/share/$pkgname
-  DOCS=(README INSTALL)
+  DOCS=(README INSTALL prelude.ps)
   for i in ${DOCS[@]}; do
-      install -m 644 $i $pkgdir/usr/share/$pkgname
+      install -c -m 644 $i $pkgdir/usr/share/$pkgname
   done
 
   mkdir -p $pkgdir/usr/share/licenses/$pkgname
-  install -m 644 LICENSE $pkgdir/usr/share/licenses/$pkgname
+  install -c -m 644 LICENSE $pkgdir/usr/share/licenses/$pkgname
 }
