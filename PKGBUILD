@@ -1,8 +1,8 @@
 # Maintainer: Robert Schwarz <mail@rschwarz.net>
 pkgname=geosteiner
 pkgver=3.1
-pkgrel=1
-pkgdesc="Compute Euclidean and Ractilinear Steiner Trees"
+pkgrel=2
+pkgdesc="Compute Euclidean and Rectilinear Steiner Trees"
 arch=(i686 x86_64)
 url="http://www.diku.dk/hjemmesider/ansatte/martinz/geosteiner/"
 license=(custom)
