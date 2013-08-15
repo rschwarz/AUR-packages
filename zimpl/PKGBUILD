@@ -1,7 +1,7 @@
 # Maintainer: Robert Schwarz <mail@rschwarz.net>
 pkgname=zimpl
 pkgver=3.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Mathematical modelling language for LP and MIP"
 arch=(i686 x86_64)
 url="http://zimpl.zib.de/"
@@ -21,13 +21,12 @@ build() {
 package() {
   cd "$srcdir/$pkgname-$pkgver"
 
-  mkdir $pkgdir/bin
-  cp bin/$pkgname $pkgdir/bin/$pkgname
-  mkdir $pkgdir/share
-  mkdir $pkgdir/share/doc
-  mkdir $pkgdir/share/doc/$pkgname
-  cp doc/$pkgname.pdf $pkgdir/share/doc/$pkgname
-  cp -r example $pkgdir/share/doc/$pkgname/example
+  mkdir -p $pkgdir/usr/bin
+  cp bin/$pkgname $pkgdir/usr/bin/$pkgname
+
+  mkdir -p $pkgdir/usr/share/doc/$pkgname
+  cp doc/$pkgname.pdf $pkgdir/usr/share/doc/$pkgname
+  cp -r example $pkgdir/usr/share/doc/$pkgname/example
 }
 
 # vim:set ts=2 sw=2 et:
