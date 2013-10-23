@@ -4,7 +4,7 @@
 
 pkgname='scipoptsuite'
 pkgver='3.0.2'
-pkgrel=1
+pkgrel=2
 pkgdesc="Toolbox for generating and solving optimization problems."
 arch=('i686' 'x86_64')
 url='http://scip.zib.de'
@@ -29,9 +29,9 @@ build() {
     # @TODO: shared lib with ZIMPL seems to be broken
     make ZIMPL=false SHARED=true scipoptlib
 
-    make -j
-    make gcg -j
-    make ug -j
+    make ZIMPL=true
+    make ZIMPL=true gcg
+    make ZIMPL=true ug
 
     cd "${srcdir}/${pkgname}-${pkgver}/${_scip}"
     make doc -j
