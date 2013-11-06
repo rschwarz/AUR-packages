@@ -4,12 +4,12 @@
 
 pkgname=qgo2-git
 pkgver=2013.11.05.a1e827a
-pkgrel=1
+pkgrel=2
 pkgdesc='Go client and full featured SGF editor; svn-snapshot of the next major version'
 arch=('i686' 'x86_64')
-url='http://qgo.sourceforge.net/'
+url='https://github.com/pzorin/qgo'
 license=('GPL')
-depends=('qt5-base')
+depends=('qt5-base' 'qt5-multimedia')
 makedepends=('git')
 conflicts=('qgo' 'qgo2-cvs' 'qgo2-svn')
 source=("$pkgname"::"git+https://github.com/pzorin/qgo.git")
